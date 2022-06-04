@@ -1,51 +1,96 @@
+<h1 align="center" id="title">Destiny Game</h1>
 
-![App Brewery Banner](Documentation/AppBreweryBanner.png)
+<p align="center">
+  <img src="https://socialify.git.ci/alexcamachogz/Destiny/image?language=1&name=1&owner=1&pattern=Solid&theme=Dark" alt="Destiny" width="640" height="320" />
+</p>
 
-#  Destini
+<p id="description">This is a “choose your own adventure” game similar to the App Store hit “Life Line” app.</p>
 
-## Our Goal
+## Demo
 
-The goal of this challenge is to get you comfortable with implementing the MVC design pattern and thinking about the state of your app. In addition, you will be reviewing the concept of Swift Structures and using it to separate the Model from the Controller. 
+![Demo](https://media.giphy.com/media/e6qhdf2RqmUm3qCkT0/giphy.gif)
 
-## What you will create
+## Features
 
-In this app, you will be creating a “choose your own adventure” game similar to the App Store hit “Life Line” app. The app will tell a story depending on what the user chooses and can be fleshed out and modified to provide an engaging story-telling experience
+Here're some of the project's best features:
 
+*   Follow a predefined story
+*   Make yout own decisions to proceed
+*   Try the multple paths
 
-## Story Strings
+## Installation Steps:
+
+1. Clone the repository.
+2. Open the project with Xcode.
+3. Run the app and enjoy it.
+
+## The process 
+### Built with
+
+Technologies used in the project:
+
+*   Swift 5.6
+*   Xcode 13.3
+*   iOS 15.5
+
+### Diagrams
+``` mermaid
+flowchart TB
+	init[You see a fork in the road]
+	a[Take a left]:::red
+	b[Take a right]:::purple
+	c[You see a tiger]
+	d[You find a treasure chest]
+	e[Shout for help]:::red
+	f[Play dead]:::purple
+	g[Open it]:::red
+	h[Check for traps]:::purple
+
+	init --> a --> c
+	init --> b --> d
+	
+	c --> e
+	c --> f
+	
+	d --> g
+	d --> h
+
+	%% Colors %%
+	classDef purple fill:#7858A6, stroke:#000, stroke-width:1px, color:#fff
+	classDef red fill:#FF8C8C, stroke:#000, stroke-width:1px, color:#fff
 ```
-        Story(
-            title: "Your car has blown a tire on a winding road in the middle of nowhere with no cell phone reception. You decide to hitchhike. A rusty pickup truck rumbles to a stop next to you. A man with a wide brimmed hat with soulless eyes opens the passenger door for you and asks: 'Need a ride, boy?'.",
-            choice1: "I'll hop in. Thanks for the help!", choice1Destination: 2,
-            choice2: "Better ask him if he's a murderer first.", choice2Destination: 1
-        ),
-        Story(
-            title: "He nods slowly, unfazed by the question.",
-            choice1: "At least he's honest. I'll climb in.", choice1Destination: 2,
-            choice2: "Wait, I know how to change a tire.", choice2Destination: 3
-        ),
-        Story(
-            title: "As you begin to drive, the stranger starts talking about his relationship with his mother. He gets angrier and angrier by the minute. He asks you to open the glovebox. Inside you find a bloody knife, two severed fingers, and a cassette tape of Elton John. He reaches for the glove box.",
-            choice1: "I love Elton John! Hand him the cassette tape.", choice1Destination: 5,
-            choice2: "It's him or me! You take the knife and stab him.", choice2Destination: 4
-        ),
-        Story(
-            title: "What? Such a cop out! Did you know traffic accidents are the second leading cause of accidental death for most adult age groups?",
-            choice1: "The", choice1Destination: 0,
-            choice2: "End", choice2Destination: 0
-        ),
-        Story(
-            title: "As you smash through the guardrail and careen towards the jagged rocks below you reflect on the dubious wisdom of stabbing someone while they are driving a car you are in.",
-            choice1: "The", choice1Destination: 0,
-            choice2: "End", choice2Destination: 0
-        ),
-        Story(
-            title: "You bond with the murderer while crooning verses of 'Can you feel the love tonight'. He drops you off at the next town. Before you go he asks you if you know any good places to dump bodies. You reply: 'Try the pier.'",
-            choice1: "The", choice1Destination: 0,
-            choice2: "End", choice2Destination: 0
-        )      
+
+### Story structure
+
+``` Swift
+// Story struct
+struct Story {
+  let title: String
+  let choice1: String
+  let choice1Destination: Int
+  let choice2: String
+  let choice2Destination: Int
+}
 ```
+
+``` Swift
+// Story collection
+let stories = [
+  Story(
+    title: "He nods slowly, unfazed by the question.",
+    choice1: "At least he's honest. I'll climb in.", choice1Destination: 2,
+    choice2: "Wait, I know how to change a tire.", choice2Destination: 3
+  ),
+]
+```
+
+## Useful resources
+
+* [Canva](https://www.canva.com) - Used to create graphics.
+* [Classes and Structures](https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html) - A guide to Structures and Classes.
+
+## Author
+
+Alex Camacho - [alexcamachogz](https://twitter.com/alexcamachogz)
 
 >This is a companion project to The App Brewery's Complete App Development Bootcamp, check out the full course at [www.appbrewery.co](https://www.appbrewery.co/)
-
-![End Banner](Documentation/readme-end-banner.png)
